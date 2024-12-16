@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "3000:8000"  
+    volumes:
+      - type: bind
+        source: ./src
+        target: /app
+    environment:
+      - DS_CLIENT_ID=${DS_CLIENT_ID}
+      - DS_USER_ID=${DS_USER_ID}
+      - DS_AUTHORIZATION_SERVER=${DS_AUTHORIZATION_SERVER}
+      - LOG_TOKEN=${LOG_TOKEN}
